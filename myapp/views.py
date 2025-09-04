@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 # Create your views here.
 def index(request):
     return HttpResponse("Hello, world. You're at the myapp index.")
@@ -13,3 +13,4 @@ def menuitems(request, dish):
     description = items[dish]
     return HttpResponse(f"<h1>{dish}</h1>" + description)
     
+# Manejo de error 404
