@@ -5,5 +5,5 @@ app_name = 'appClass'
 
 # Ejemplo de vistas basadas en clases
 urlpatterns = [
-    
+    path('', views.form, name='home')
 ]
