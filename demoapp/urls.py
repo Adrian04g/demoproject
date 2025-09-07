@@ -13,4 +13,5 @@ urlpatterns = [
     #ejemplo de formulario
     path('showform', views.showform, name='showform'),
     path('getform', views.getform, name='getform'),
+    path('form', views.form_view, name='form_view'),
 ]

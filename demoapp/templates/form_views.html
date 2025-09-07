@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/demoapp/Mod_Admin.css">
+</head>
+</head>
+<body>
+    <div class="top-bar bg-light border-bottom p-2">
+        <button class="btn btn-secondary sidebar-toggle-btn" id="toggleSidebar">☰</button>
+        <span class="h4 align-middle ms-3">Cargar Proyectos</span>
+    </div>
+    <div class="main-wrapper d-flex" style="min-height: 100vh;">
+        <nav id="sidebar" class="sidebar bg-dark text-white sidebar-visible">
+            <h4 class="mb-4">Menú</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white" href="#">Inicio</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white" href="#">Administrativo</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white" href="#">Facturación</a>
+                </li>
+            </ul>
+        </nav>
+        <!--Formulario para registrar proyectos-->
+        <div class="container mt-4">
+            <h2>Registrar Nuevo Proyecto</h2>
+            <form method="post" action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Guardar Proyecto</button>
+            </form>
+        </div>
+    </div>
+    <script src="/static/demoapp/script.js"></script>
+</body>
+</html>
+   

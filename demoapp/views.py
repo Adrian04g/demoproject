@@ -43,3 +43,14 @@ def getform(request):
         return HttpResponse("Name:{} UserID:{}".format(name, id)) 
     else: 
         return HttpResponse("Error: Form submission failed.")
+# Vista del formulario con ModelForm
+from .forms import MyFormForm
+def form_view(request):
+    form = MyFormForm()
+    if request.method == 'POST':
+        form = MyFormForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = MyFormForm()  # Clear the form after saving
+    context = {'form': form}
+    return render(request, 'form_views.html', context)
